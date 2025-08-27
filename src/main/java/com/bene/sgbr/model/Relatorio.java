@@ -19,11 +19,24 @@ public class Relatorio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "CLIENTE")
     private String cliente;
 
+    @Column(name = "CPF")
+    private String cpf;
+
+    private Categoria categoria;
+
+    @Column(name = "VEICULO")
     private String veiculo;
 
+    @Column(name = "LUCRO")
     private String lucro;
 
+    @Column(name = "ESCAPE")
+    private String escapamento;
 
+    @ManyToOne
+    @JoinColumn(name = "beneiro_id")
+    private Benneiro beneiro;
 }
