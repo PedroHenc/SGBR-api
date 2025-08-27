@@ -25,6 +25,8 @@ public class Benneiro implements Serializable {
     @Column(name = "CARGO")
     private String cargo;
 
+    private Boolean Ativo;
+
     @OneToMany(mappedBy = "beneiro", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Relatorio> relatorios;
 }
