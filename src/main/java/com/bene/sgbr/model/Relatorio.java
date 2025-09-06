@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -15,8 +16,14 @@ import java.io.Serializable;
 @Table(name = "relatorios")
 public class Relatorio implements Serializable {
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Audit audit;
+    @Column(name = "created_by")
+    private String createdBy;
+
+    @Column(name = "EditedBy")
+    private String EditedBy;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
