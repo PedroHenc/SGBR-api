@@ -35,7 +35,7 @@ public class Relatorio implements Serializable {
     @Column(name = "CPF")
     private String cpf;
 
-    private Categoria categoria;
+    private String categoria;
 
     @Column(name = "VEICULO")
     private String veiculo;
