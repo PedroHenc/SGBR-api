@@ -1,5 +1,6 @@
 package com.bene.sgbr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,10 @@ public class Benneiro implements Serializable {
 
     private Boolean Ativo;
 
-    @OneToMany(mappedBy = "beneiro", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(columnDefinition = "text", name = "FOTO_PERFIL")
+    private String fotoPerfil;
+
+    @OneToMany(mappedBy = "benneiro", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Relatorio> relatorios;
 }
