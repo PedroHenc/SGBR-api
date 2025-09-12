@@ -41,6 +41,8 @@ public class Relatorio implements Serializable {
 
     private String cliente;
 
+    private String escape;
+
     private String cpf;
 
     private String categoria;
