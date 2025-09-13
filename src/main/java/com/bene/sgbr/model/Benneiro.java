@@ -13,20 +13,24 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "benneiro")
 public class Benneiro implements Serializable {
 
     @Id
+    @SequenceGenerator(name = "seqBenneiro", sequenceName = "seq_tb_benneiro", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqBenneiro")
     private Long id;
 
-    @Column(name = "NOME")
+    @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    @Column(name = "CARGO")
+    @Column(name = "cargo", length = 100)
     private String cargo;
 
-    private Boolean Ativo;
+    @Column(name = "ativo")
+    private Boolean ativo = true;
 
-    @Column(columnDefinition = "text", name = "FOTO_PERFIL")
+    @Column(name = "foto_perfil", columnDefinition = "TEXT")
     private String fotoPerfil;
 
     @OneToMany(mappedBy = "benneiro", cascade = CascadeType.ALL, orphanRemoval = true)

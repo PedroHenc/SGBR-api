@@ -29,8 +29,9 @@ public class BenneiroController {
     }
 
     @PostMapping
-    public ResponseEntity<Benneiro> salvar(@RequestBody Benneiro beneiro) {
-        return ResponseEntity.ok(service.salvar(beneiro));
+    public ResponseEntity<Benneiro> salvar(@RequestBody Benneiro benneiro) {
+        benneiro.setId(null);
+        return ResponseEntity.ok(service.salvar(benneiro));
     }
 
     @DeleteMapping("/{id}")
