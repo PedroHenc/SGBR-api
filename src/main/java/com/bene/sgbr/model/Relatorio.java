@@ -26,6 +26,7 @@ public class Relatorio implements Serializable {
     @JsonProperty("benneiro")
     private Benneiro benneiro;
 
+    private String Tipo;
 
     @JsonProperty("created_by")
     @Column(name = "created_by")
