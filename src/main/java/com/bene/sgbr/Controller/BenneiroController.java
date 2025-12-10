@@ -28,6 +28,12 @@ public class BenneiroController {
         return benneiro != null ? ResponseEntity.ok(benneiro) : ResponseEntity.notFound().build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Benneiro> Editar(@RequestBody Benneiro beneiro) {
+        Benneiro benneiro = service.editar(beneiro);
+        return benneiro != null ? ResponseEntity.ok(benneiro) : ResponseEntity.notFound().build();
+    }
+
     @PostMapping
     public ResponseEntity<Benneiro> salvar(@RequestBody Benneiro benneiro) {
         benneiro.setId(null);

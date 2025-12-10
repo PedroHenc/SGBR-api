@@ -22,6 +22,8 @@ public class BenneiroService {
         return repository.save(beneiro);
     }
 
+    public Benneiro editar (Benneiro beneiro) { return repository.save(beneiro); }
+
     public Benneiro buscarPorId(Long id) {
         return repository.findById(id).orElse(null);
     }
